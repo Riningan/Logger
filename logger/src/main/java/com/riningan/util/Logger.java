@@ -3,7 +3,7 @@ package com.riningan.util;
 
 public class Logger {
     public static final LoggerConfig Config = new LoggerConfig();
-    private static final Log log = new Log(Config);
+    private static final Log mLog = new Log(Config);
 
 
     private Logger() {
@@ -11,62 +11,62 @@ public class Logger {
 
 
     public static synchronized Log forThis(Object object) {
-        log.forThis(object);
-        return log;
+        mLog.forThis(object);
+        return mLog;
     }
 
 
     public static synchronized void debug() {
-        log.debugThread();
+        forThis(null).debug();
     }
 
     public static synchronized void debug(String message) {
-        log.debugThread(message);
+        forThis(null).debug(message);
     }
 
     public static synchronized void debug(String param, String value) {
-        log.debugThread(param, value);
-    }
-
-    public static synchronized void debug(String param, int value) {
-        log.debugThread(param, value);
+        forThis(null).debug(param, value);
     }
 
     public static synchronized void debug(String param, boolean value) {
-        log.debugThread(param, value);
+        forThis(null).debug(param, value);
+    }
+
+    public static synchronized void debug(String param, int value) {
+        forThis(null).debug(param, value);
     }
 
     public static synchronized void debug(String param, long value) {
-        log.debugThread(param, value);
-    }
-
-    public static synchronized void debug(String param, double value) {
-        log.debugThread(param, value);
+        forThis(null).debug(param, value);
     }
 
     public static synchronized void debug(String param, float value) {
-        log.debugThread(param, value);
+        forThis(null).debug(param, value);
+    }
+
+    public static synchronized void debug(String param, double value) {
+        forThis(null).debug(param, value);
     }
 
     public static synchronized void debug(String param, String value, String... params) {
-        log.debugThread(param, value, params);
+        forThis(null).debug(param, value, params);
     }
 
 
     public static synchronized void error(String message) {
-        log.errorThread(message);
+        forThis(null).error(message);
     }
 
     public static synchronized void error(Throwable throwable) {
-        log.errorThread(throwable);
+        forThis(null).error(throwable);
     }
 
 
     public static synchronized void info() {
-        log.infoThread();
+        forThis(null).info();
     }
 
     public static synchronized void info(String message) {
-        log.infoThread(message);
+        forThis(null).info(message);
     }
 }

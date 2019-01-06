@@ -13,6 +13,7 @@ public class SampleApp extends Application {
     public void onCreate() {
         super.onCreate();
         Logger.Config
+                .setEnabled(false)
                 .removeApplicationId(BuildConfig.APPLICATION_ID)
                 .addPreffix(BuildConfig.VERSION_NAME)
                 .setOnMessageListener(new OnMessageListener() {
