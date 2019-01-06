@@ -9,6 +9,7 @@ import java.util.Date;
 public class LoggerConfig {
     private int mApplicationIdLength = 0;
     private String mPreffix = "";
+    private Boolean mIsEnabled = true;
     @SuppressLint("SimpleDateFormat")
     private SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd: HH:mm:ss");
     private OnMessageListener mListener = null;
@@ -34,6 +35,11 @@ public class LoggerConfig {
         return this;
     }
 
+    public LoggerConfig setEnabled(boolean isEnabled) {
+        mIsEnabled = isEnabled;
+        return this;
+    }
+
     public LoggerConfig setOnMessageListener(OnMessageListener listener) {
         mListener = listener;
         return this;
@@ -50,6 +56,10 @@ public class LoggerConfig {
 
     String getPreffix() {
         return mPreffix;
+    }
+
+    boolean isEnabled() {
+        return mIsEnabled;
     }
 
     void onNewMessage(MessageType type, String message) {
