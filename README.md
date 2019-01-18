@@ -1,6 +1,6 @@
 # Logger
 
-[ ![Download](https://api.bintray.com/packages/riningan/AndroidMaven/Logger/images/download.svg?version=1.0) ](https://bintray.com/riningan/AndroidMaven/Logger/1.0/link)
+[ ![Download](https://api.bintray.com/packages/riningan/AndroidMaven/Logger/images/download.svg?version=1.1) ](https://bintray.com/riningan/AndroidMaven/Logger/1.1/link)
 
 Android log util library.
 
@@ -19,7 +19,7 @@ Add dependencies in build.gradle of your module.
 
 ```groovy
 dependencies {
-  implementation 'com.riningan.util:logger:1.0'
+  implementation 'com.riningan.util:logger:1.1'
 }
 ```
 
