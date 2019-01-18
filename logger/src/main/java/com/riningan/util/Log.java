@@ -20,11 +20,13 @@ public class Log {
 
 
     void forThis(Object object) {
-        try {
-            mSemaphore.acquire();
-        } catch (InterruptedException ignored) {
+        if (mConfig.isEnabled()) {
+            try {
+                mSemaphore.acquire();
+            } catch (InterruptedException ignored) {
+            }
+            mThis = object;
         }
-        mThis = object;
     }
 
 
